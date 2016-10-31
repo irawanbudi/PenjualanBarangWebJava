@@ -39,7 +39,9 @@ public class Deskripsi extends HttpServlet {
                 + "Amarullah<br>"
                 + "Chandra Irwansyah<br>"
                 + "Handrian Maulana<br>"
-                + "Irawan Budi Susanto<br>";
+                + "Irawan Budi Susanto<br>"
+                + "<br><br><p>default username: admin, password: admin</p>"
+                + "<small><a href='https://github.com/irawanbudi/PenjualanBarangWebJava'>https://github.com/irawanbudi/PenjualanBarangWebJava</a></small>";
         new MainForm().tampilkan(konten, request, response);
     }
 
