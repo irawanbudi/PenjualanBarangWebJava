@@ -152,7 +152,8 @@ public class DataBarang {
             ResultSet rset;
 
             try {
-                SQLStatemen = "select kode,nama,harga,stok,satuan from barang";
+                SQLStatemen = "select kode,nama,harga,stok,satuan from barang "
+                        + " limit  "+mulai+", "+jumlah;
                 sta = connection.createStatement();
                 rset = sta.executeQuery(SQLStatemen);
 
