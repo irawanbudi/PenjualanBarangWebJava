@@ -125,7 +125,7 @@ public class StokBarangController extends HttpServlet {
             kontenLihat += "</tr>";
             kontenLihat += "<tr>";
             kontenLihat += "<td align='right'>Format Laporan</td>";
-            kontenLihat += "<td>";
+            kontenLihat += "<td colspan='2'>";
             kontenLihat += "<select name='formatType'>";
             for (String[] formatLaporan : formatTypeData) {
                 if (formatLaporan[0].equals(formatType)) {
@@ -139,7 +139,7 @@ public class StokBarangController extends HttpServlet {
             kontenLihat += "</td>";
             kontenLihat += "</tr>";
             kontenLihat += "<tr>";
-            kontenLihat += "<td colspan='2' align='center'><input type='submit' name='tombol' value='Cetak' style='width: 100px'></td>";
+            kontenLihat += "<td colspan='3' align='center'><input type='submit' name='tombol' value='Cetak' style='width: 100px'></td>";
             kontenLihat += "</tr>";
             kontenLihat += "</table>";
 
