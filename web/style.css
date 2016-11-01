@@ -83,7 +83,7 @@ table#t01 tr:nth-child(even) {
 table#t01 tr:nth-child(odd) {
    background-color:#fff;
 }
-table#t01 th {
+table#t01 th{
     background-color: black;
     color: white;
 }
