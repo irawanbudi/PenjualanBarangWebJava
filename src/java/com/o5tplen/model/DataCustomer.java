@@ -159,7 +159,8 @@ private final PesanDialog pesanDialog=new PesanDialog();
             ResultSet rset;
             
             try { 
-                SQLStatemen = "select id,nama,alamat from customer"; 
+                SQLStatemen = "select id,nama,alamat from customer "
+                        + " limit  "+mulai+", "+jumlah; 
                 sta = connection.createStatement(); 
                 rset = sta.executeQuery(SQLStatemen);
                 
