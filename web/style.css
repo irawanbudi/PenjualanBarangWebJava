@@ -7,38 +7,10 @@ and open the template in the editor.
     Created on : Oct 26, 2016, 5:41:39 PM
     Author     : Irawan
 */
-/*
-#menu {
-    
-    background: #efefef; 
-    
-    background: linear-gradient(left, #efefef 0%, #bbbbbb 100%);  
-    background: -moz-linear-gradient(left, #efefef 0%, #bbbbbb 100%); 
-    background: -webkit-linear-gradient(left, #efefef 0%,#bbbbbb 100%); 
-    box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-    padding: 0 20px;
-    border-radius: 10px;  
-    
-    list-style: none;
-    position: relative;
-    display: inline-table;
-    background-color: #333;
-}
-*/
 #menu{
     color:black;
     background-color: whitesmoke;     
 }
-/*
-#menu a:link, a:visited {
-    background-color: #f44336;
-    color: white;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-*/
 #menu a:link, a:visited{
   width: 120px;
   text-decoration: none;
@@ -68,7 +40,7 @@ nav li {
     float: left;
 }
 
-nav li a, .dropbtn {
+nav li a,a:visited, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
