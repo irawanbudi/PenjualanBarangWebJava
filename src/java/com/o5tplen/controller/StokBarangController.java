@@ -101,6 +101,38 @@ public class StokBarangController extends HttpServlet {
             }
             String isi = "";
             String kontenLihat = "<table>";
+
+            if (tombol.equals("Lihat") || tombol.equals("Sebelumnya") || tombol.equals("Berikutnya") || tombol.equals("Tampilkan")
+                    || tombol.equals("") || tombol.equals("Cetak")) {
+                if (tombol.equals("Sebelumnya")) {
+                    mulai -= jumlah;
+                    if (mulai < 0) {
+                        mulai = 0;
+                    }
+                }
+
+                if (tombol.equals("Berikutnya")) {
+                    mulai += jumlah;
+                }
+
+                Object[][] listDataBarang = null;
+                if (dataBarang.bacaData(mulai, jumlah)) {
+                    listDataBarang = dataBarang.getList();
+                } else {
+                    keterangan = dataBarang.getPesan();
+                }
+
+                if (listDataBarang != null) {
+                    for (int i = 0; i < listDataBarang.length; i++) {
+                        isi += "<tr>";
+                        isi += "<td>" + (i + 1) + "</td>";
+                        for (int j = 0; j < listDataBarang[i].length; j++) {
+                            isi += "<td>" + listDataBarang[i][j].toString() + "</td>";
+                        }
+                        isi += "</tr>";
+                    }
+                }
+
             kontenLihat += "<tr>";
             kontenLihat += "<td align='center'><input type='submit' name='tombol' value='Sebelumnya' style='width: 100px'></td>";
             kontenLihat += "<td align='center'></td>";
@@ -142,38 +174,6 @@ public class StokBarangController extends HttpServlet {
             kontenLihat += "<td colspan='3' align='center'><input type='submit' name='tombol' value='Cetak' style='width: 100px'></td>";
             kontenLihat += "</tr>";
             kontenLihat += "</table>";
-
-            if (tombol.equals("Lihat") || tombol.equals("Sebelumnya") || tombol.equals("Berikutnya") || tombol.equals("Tampilkan")
-                    || tombol.equals("") || tombol.equals("Cetak")) {
-                if (tombol.equals("Sebelumnya")) {
-                    mulai -= jumlah;
-                    if (mulai < 0) {
-                        mulai = 0;
-                    }
-                }
-
-                if (tombol.equals("Berikutnya")) {
-                    mulai += jumlah;
-                }
-
-                Object[][] listDataBarang = null;
-                if (dataBarang.bacaData(mulai, jumlah)) {
-                    listDataBarang = dataBarang.getList();
-                } else {
-                    keterangan = dataBarang.getPesan();
-                }
-
-                if (listDataBarang != null) {
-                    for (int i = 0; i < listDataBarang.length; i++) {
-                        isi += "<tr>";
-                        isi += "<td>" + (i + 1) + "</td>";
-                        for (int j = 0; j < listDataBarang[i].length; j++) {
-                            isi += "<td>" + listDataBarang[i][j].toString() + "</td>";
-                        }
-                        isi += "</tr>";
-                    }
-                }
-
             }
 
             String konten = "<h2>Stok Barang</h2>";
